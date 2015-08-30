@@ -311,10 +311,10 @@ function toggleBorder(args) {
 function toggleMass(args) {
     if (toggleMassState === 0) {
         toggleMassState = 1;
-        chat.addSystemLine('Mass mode activated!');
+        chat.addSystemLine('Показ массы Включен!');
     } else {
         toggleMassState = 0;
-        chat.addSystemLine('Mass mode deactivated!');
+        chat.addSystemLine('Показ Массы отключен!');
     }
 }
 
@@ -331,11 +331,11 @@ function toggleContinuity(args) {
 // TODO
 // Break out many of these game controls into a separate class
 
-chat.registerCommand('ping', 'Check your latency', function () {
+chat.registerCommand('ping', 'Приверить Пинг', function () {
     checkLatency();
 });
 
-chat.registerCommand('dark', 'Toggle dark mode', function () {
+chat.registerCommand('dark', 'Темный Фон', function () {
     toggleDarkMode();
 });
 
@@ -343,7 +343,7 @@ chat.registerCommand('border', 'Toggle border', function () {
     toggleBorder();
 });
 
-chat.registerCommand('mass', 'View mass', function () {
+chat.registerCommand('mass', 'Показать Массу', function () {
     toggleMass();
 });
 
@@ -351,15 +351,15 @@ chat.registerCommand('continuity', 'Toggle continuity', function () {
     toggleContinuity();
 });
 
-chat.registerCommand('help', 'Chat commands information', function () {
+chat.registerCommand('help', 'Коменды', function () {
     chat.printHelp();
 });
 
-chat.registerCommand('login', 'Login as an admin', function (args) {
+chat.registerCommand('login', 'Зайти как Админ', function (args) {
     socket.emit('pass', args);
 });
 
-chat.registerCommand('kick', 'Kick a player', function (args) {
+chat.registerCommand('kick', 'Кикнуть', function (args) {
     socket.emit('kick', args);
 });
 
@@ -394,7 +394,7 @@ function setupSocket(socket) {
         socket.emit('gotit', player);
         gameStart = true;
         debug('Game is started: ' + gameStart);
-        chat.addSystemLine('Connected to the game!');
+        chat.addSystemLine('Вошли в Игру!');
         chat.addSystemLine('Type <b>-help</b> for a list of commands');
         if (mobile) {
             document.getElementById('gameAreaWrapper').removeChild(document.getElementById('chatbox'));
@@ -438,7 +438,7 @@ function setupSocket(socket) {
                     status += (i + 1) + '. A cell unnamed';
             }
         }
-        //status += '<br />Players: ' + data.players;
+        //status += '<br />Игроки: ' + data.players;
         document.getElementById('status').innerHTML = status;
     });
 
