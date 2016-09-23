@@ -185,7 +185,7 @@ ChatClient.prototype.addChatLine = function (name, message, me) {
 
     // color the chat input appropriately
     newline.className = (me) ? 'me' : 'friend';
-    newline.innerHTML = '<b>' + ((name.length < 1) ? 'A cell unnamed' : name) + '</b>: ' + message;
+    newline.innerHTML = '<b>' + ((name.length < 1) ? 'Лох без ника' : name) + '</b>: ' + message;
 
     this.appendMessage(newline);
 };
@@ -339,7 +339,7 @@ chat.registerCommand('dark', 'Темный Фон', function () {
     toggleDarkMode();
 });
 
-chat.registerCommand('border', 'Toggle border', function () {
+chat.registerCommand('border', 'Показать края', function () {
     toggleBorder();
 });
 
@@ -351,7 +351,7 @@ chat.registerCommand('continuity', 'Toggle continuity', function () {
     toggleContinuity();
 });
 
-chat.registerCommand('help', 'Коменды', function () {
+chat.registerCommand('help', 'Команды', function () {
     chat.printHelp();
 });
 
@@ -822,7 +822,7 @@ function gameLoop() {
             graph.textAlign = 'center';
             graph.fillStyle = '#FFFFFF';
             graph.font = 'bold 30px sans-serif';
-            graph.fillText('Game Over!', screenWidth / 2, screenHeight / 2);
+            graph.fillText('Игра окончена!', screenWidth / 2, screenHeight / 2);
         }
     } else {
         graph.fillStyle = '#333333';
@@ -833,15 +833,15 @@ function gameLoop() {
         graph.font = 'bold 30px sans-serif';
         if (kicked) {
             if (reason !== '') {
-                graph.fillText('You were kicked for reason:', screenWidth / 2, screenHeight / 2 - 20);
+                graph.fillText('Вы были кикнуты по причине:', screenWidth / 2, screenHeight / 2 - 20);
                 graph.fillText(reason, screenWidth / 2, screenHeight / 2 + 20);
             }
             else {
-                graph.fillText('You were kicked!', screenWidth / 2, screenHeight / 2);
+                graph.fillText('Вы были кикнуты!', screenWidth / 2, screenHeight / 2);
             }
         }
         else {
-              graph.fillText('Disconnected!', screenWidth / 2, screenHeight / 2);
+              graph.fillText('Отключены!', screenWidth / 2, screenHeight / 2);
         }
     }
 }
