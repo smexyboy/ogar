@@ -410,27 +410,27 @@ function setupSocket(socket) {
     });
 
     socket.on('playerDied', function (data) {
-        chat.addSystemLine('Player <b>' + data.name + '</b> died!');
+        chat.addSystemLine('Player <b>' + data.name + '</b> Умерли!');
     });
 
     socket.on('playerDisconnect', function (data) {
-        chat.addSystemLine('Player <b>' + data.name + '</b> disconnected!');
+        chat.addSystemLine('Player <b>' + data.name + '</b> Отключены!');
     });
 
     socket.on('playerJoin', function (data) {
-        chat.addSystemLine('Player <b>' + data.name + '</b> joined!');
+        chat.addSystemLine('Player <b>' + data.name + '</b> Заходит в игру!');
     });
 
     socket.on('leaderboard', function (data) {
         leaderboard = data.leaderboard;
-        var status = '<span class="title">Leaderboard</span>';
+        var status = '<span class="title">10 Самых жирных</span>';
         for (var i = 0; i < leaderboard.length; i++) {
             status += '<br />';
             if (leaderboard[i].id == player.id){
                 if(leaderboard[i].name.length !== 0)
                     status += '<span class="me">' + (i + 1) + '. ' + leaderboard[i].name + "</span>";
                 else
-                    status += '<span class="me">' + (i + 1) + ". A cell unnamed</span>";
+                    status += '<span class="me">' + (i + 1) + ". Лох Без Ника</span>";
             } else {
                 if(leaderboard[i].name.length !== 0)
                     status += (i + 1) + '. ' + leaderboard[i].name;
