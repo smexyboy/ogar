@@ -370,7 +370,7 @@ function setupSocket(socket) {
     socket.on('pong', function () {
         var latency = Date.now() - startPingTime;
         debug('Latency: ' + latency + 'ms');
-        chat.addSystemLine('Пинг: ' + latency + 'ms');
+        chat.addSystemLine('Задержка: ' + latency + 'ms');
     });
 
     // Handle error
@@ -395,7 +395,7 @@ function setupSocket(socket) {
         gameStart = true;
         debug('Game is started: ' + gameStart);
         chat.addSystemLine('Вошли в Игру!');
-        chat.addSystemLine('Type <b>-help</b> for a list of commands');
+        chat.addSystemLine('Напишите в Чат <b>-help</b> для просмотра доступных команд');
         if (mobile) {
             document.getElementById('gameAreaWrapper').removeChild(document.getElementById('chatbox'));
         }
@@ -410,11 +410,11 @@ function setupSocket(socket) {
     });
 
     socket.on('playerDied', function (data) {
-        chat.addSystemLine('Игрок <b>' + data.name + '</b> Умерли!');
+        chat.addSystemLine('Игрок <b>' + data.name + '</b> Сдох!');
     });
 
     socket.on('playerDisconnect', function (data) {
-        chat.addSystemLine('Игрок <b>' + data.name + '</b> Отключены!');
+        chat.addSystemLine('Игрок <b>' + data.name + '</b> Отключен!');
     });
 
     socket.on('playerJoin', function (data) {
