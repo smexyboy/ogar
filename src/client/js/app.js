@@ -370,7 +370,7 @@ function setupSocket(socket) {
     socket.on('pong', function () {
         var latency = Date.now() - startPingTime;
         debug('Latency: ' + latency + 'ms');
-        chat.addSystemLine('Ping: ' + latency + 'ms');
+        chat.addSystemLine('Пинг: ' + latency + 'ms');
     });
 
     // Handle error
