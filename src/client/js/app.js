@@ -410,15 +410,15 @@ function setupSocket(socket) {
     });
 
     socket.on('playerDied', function (data) {
-        chat.addSystemLine('Player <b>' + data.name + '</b> Умерли!');
+        chat.addSystemLine('Игрок <b>' + data.name + '</b> Умерли!');
     });
 
     socket.on('playerDisconnect', function (data) {
-        chat.addSystemLine('Player <b>' + data.name + '</b> Отключены!');
+        chat.addSystemLine('Игрок <b>' + data.name + '</b> Отключены!');
     });
 
     socket.on('playerJoin', function (data) {
-        chat.addSystemLine('Player <b>' + data.name + '</b> Заходит в игру!');
+        chat.addSystemLine('Игрок <b>' + data.name + '</b> Заходит в игру!');
     });
 
     socket.on('leaderboard', function (data) {
