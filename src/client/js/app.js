@@ -841,7 +841,7 @@ function gameLoop() {
             }
         }
         else {
-              graph.fillText('Отключены!', screenWidth / 2, screenHeight / 2);
+              graph.fillText('Админы обновили сервак, либо он перезагрузился!', screenWidth / 2, screenHeight / 2);
         }
     }
 }
